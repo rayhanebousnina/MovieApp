@@ -3,8 +3,6 @@ import {state, useState, useEffect} from 'react'
 import Favorite from './Favorite';
 import { BrowserRouter, Route } from "react-router-dom";
 
-// import Series from "./series";
-// import Genre from "./genre";
 import './App.css';
 import Home from './Home'
 import Genre from './Genre'
@@ -36,10 +34,16 @@ function App() {
   const getFavorites =() =>{
     setFavorite(favorite+1)
   }
+
+  const [favoriteMovie, setFavoriteMovie] = useState([])
+  const getFavoriteMovie = (currentMovie) => {
+    setFavoriteMovie(favoriteMovie.find(x => x.id === currentMovie.id))
+    console.log(favoriteMovie)
+  }
   return (
     <div>
        <BrowserRouter>       
-        <Route exact path="/"><Home search={search} onSearchChange={handleChange} movie={movie} favorite={favorite} getFavorites={getFavorites}/></Route>
+        <Route exact path="/"><Home search={search} onSearchChange={handleChange} movie={movie} favorite={favorite} getFavorites={getFavorites} favoriteMovie={favoriteMovie} getFavoriteMovie={getFavoriteMovie}/></Route>
         <Route path="/series"><Series favorite={favorite}/></Route>
         <Route path="/genres"> <Genre favorite={favorite}/> </Route>
         <Route path="/favorites"><Favorite favorite={favorite}/></Route>
