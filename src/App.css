@@ -13,15 +13,17 @@ body {
 }
 .form-control  {
   border-radius: 1.25rem !important;
-  width: 40% !important;
+  width: 70% !important;
   display: inline-block;
   background-color: #fff0;
   margin-right: 3%;
+  
 }
 .form-control:focus {
   border: #bd2c74 !important;
   background-color: #fff0;
   box-shadow: 0 0 0 0.25rem #bd2c74;
+  color: #fff;
 }
 
 
@@ -30,13 +32,22 @@ body {
   height: 2.5rem;
   width: auto;
 }
-
-.nav-link:hover {
+.navbar-nav a {
+  color: #bcbdbf;
+  text-decoration: none;
+}
+.navbar-nav a:hover  {
+  border-bottom: 1px solid #bd2c74 !important;
+}
+.navbar-nav a:focus {
+  border-bottom: 1px solid #bd2c74 !important;
+}
+/* .nav-link:hover {
   border-bottom: 1px solid #bd2c74 !important;
 }
 .nav-link:focus {
   border-bottom: 1px solid #bd2c74 !important;
-}
+} */
 .logo {
     height: 3rem;
     width: auto;
@@ -54,6 +65,12 @@ body {
   background-color: #21252900!important;
 }
 
+.badge-favorite {
+  background-color: #bd2c74;
+  color: #bcbdbf;
+  border-radius: 2rem;
+}
+
 /******************************Cover*******************************/
 .cover {
   background-image: linear-gradient(rgba(0, 0, 0, 0.671), rgba(0, 0, 0, 0.4)),
@@ -69,28 +86,59 @@ body {
 }
 
 /******************************Popular Movies Section*******************************/
+
+.head-title {
+  color: #fff;
+  border-bottom: 1px solid #bd2c74 !important;
+}
+span {
+  color: #bd2c74;
+}
 .movie-card:hover .card-img-overlay {
   opacity: 1;
 }
 
+.card-img {
+  height: 20rem;
+}
+
+.body-card {
+  height: 9rem;
+}
 .card-img-overlay {
   opacity: 0;
   background-image: linear-gradient(rgba(0, 0, 0, 0.671), rgba(0, 0, 0, 0.4));
 }
 
 .movie-card {
-  background-color: black !important;
+  background-color: #130012b4 !important;
   border-bottom: 2px solid #bd2c74;
+
 }
 .inline-cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
+.fa-star {
+  color: rgb(250, 213, 6);
+}
+.fa-heart {
+  color: rgb(224, 82, 105);
+}
+
+Button {
+  background-color: transparent !important;
+  border-color: transparent !important;
+}
+Button:focus {
+  border-color: transparent !important;
+  box-shadow: 0 0 0 0.25rem transparent !important;
+
+}
 
 /******************************Footer*******************************/
-/* .nb-footer{
-  background: #272727;
-  margin-top: 60px;
+.nb-footer{
+  background: #130012b4;
   padding-bottom: 30px;
 }
 .nb-footer .footer-single{
@@ -99,10 +147,9 @@ body {
 .nb-footer .footer-title{
     display: block;
   margin: 10px 0 25px 0;
-  border-bottom: 1px dotted #e4e9f0;
 }
 .nb-footer .footer-single a{
-	text-decoration: none;
+    text-decoration: none;
 }
 
 .nb-footer .footer-single h2{
@@ -110,7 +157,7 @@ body {
   font-size: 18px;
   font-weight: 200;
   display: inline-block;
-  border-bottom: 2px solid #7BFF00;
+  border-bottom: 2px solid #bd2c74;
   padding-bottom: 5px;
   margin-bottom: -2px;
 }
@@ -128,10 +175,10 @@ body {
   transition:all 0.4s ease-in-out;
 }
 .nb-footer .footer-single li a:hover{
-  color: #7BFF00;
+  color: #bd2c74;
 }
 .nb-footer .footer-single li a:hover i{
-  color: #7BFF00;
+  color: #bd2c74;
 }
 .nb-footer .dummy-logo {
     margin-top: 11px;
@@ -143,7 +190,7 @@ body {
     margin-top: 24px;
 }
 .nb-footer .brand {
-    background: #7BFF00;
+    background: #bd2c74;
 }
 .nb-footer .dummy-logo i {
     font-size: 50px;
@@ -161,12 +208,12 @@ body {
     padding: 5px 0;
 }
 .nb-footer .btn-footer{
-  border: 1px solid #7BFF00;
+  border: 1px solid #bd2c74;
   margin-top: 10px;
   color: #999;
 }
 .nb-footer .btn-footer:hover{
-  background: #7BFF00;
+  background: #bd2c74;
   color: #fff;
   transition:all 0.4s ease-in-out;
 
@@ -199,7 +246,7 @@ body {
   line-height: 22px;
 }
 .nb-copyright{
-  background: #171717;
+  background: #050005e0;
   padding-bottom: 10px;
 }
  .nb-copyright .copyrt{
@@ -207,10 +254,12 @@ body {
   font-size: 14px;
 }
 .nb-copyright .copyrt a{
-  color: #7BFF00;
+  color: #bd2c74;
 }
 .nb-copyright .footer-social{
-	margin-top: 10px;
+    margin-top: 10px;
+  display: flex;
+  justify-content: flex-end;
 }
 .nb-copyright .footer-social i{
   padding: 5px 10px;
@@ -222,20 +271,20 @@ body {
   transition:all 0.4s ease-in-out;
 }
 .nb-copyright .footer-social i:hover{
-  background: #7BFF00;
+  background: #bd2c74;
   color: #fff;
 }
 .nb-copyright .footer-social .fa-facebook{
   padding: 5px 14px;
 }
 @media(max-width: 767px){
-	 .xs-center{
-	text-align: center;
+     .xs-center{
+    text-align: center;
 }
  .left-clear{
-	padding-left: 0;
+    padding-left: 0;
 }
  .right-clear{
-	padding-right: 0;
+    padding-right: 0;
 }
-} */
+}
