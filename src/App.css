@@ -36,6 +36,7 @@ body {
 .navbar-nav a {
   color: #bcbdbf;
   text-decoration: none;
+  margin-right: 0.5rem;
 }
 .navbar-nav a:hover  {
   border-bottom: 1px solid #bd2c74 !important;
@@ -74,11 +75,56 @@ body {
   border-radius: 15px;
   padding: 2px 6px 2px 5px;
 }
+.navbar-shadow {
+  box-shadow: 0 2px 4px 0 rgba(48, 44, 44, 0.322);
+}
 
+.btn-signIn {
+  background: rgb(166, 63, 251);
+  background: linear-gradient(90deg, rgb(166, 63, 251) 0%, rgba(252,70,107,1) 100%);
+  border: none;
+  color: #fff;
+  border-radius: 2rem;
+}
+.modal-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  pointer-events: auto;
+  background-color: rgba(0, 0, 0, 0.733);
+  background-clip: padding-box;
+  border: 1px solid #bd2c74;
+  border-radius: .3rem;
+  outline: 0;
+}
+.modal-title {
+  margin-bottom: 0;
+  line-height: 1.5;
+  color: white;
+}
+.modal-body {
+  position: relative;
+  flex: 1 1 auto;
+  padding: 1rem;
+  color: white;
+}
+.modal-footer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: flex-end;
+  padding: .75rem;
+  border-top: 1px solid #f2f6f9;
+  border-bottom-right-radius: calc(.3rem - 1px);
+  border-bottom-left-radius: calc(.3rem - 1px);
+  color: white;
+}
 /******************************Cover*******************************/
 .cover {
   background-image: linear-gradient(rgba(0, 0, 0, 0.671), rgba(0, 0, 0, 0.4)),
-  url(https://i.ytimg.com/vi/Hnwd9jMFn8s/maxresdefault.jpg);
+  url(https://occ-0-55-778.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABSjPapI0ym-QDkuREgAmnEZsuz2WzmegYQw-m2VWou5jNqFkJdql2grHQKdxXrsFSi5i24X8dgSMgtRH3iLlv0lEfcie.jpg?r=bf6);
   background-size: cover;
   height: 40rem;
 }
@@ -88,7 +134,35 @@ body {
   margin-left: 50%;
   margin-top: 25%;
 }
-
+.cover-title {
+  color: rgb(185, 171, 171);
+  margin-top: 15%;
+  margin-left: 55%;
+}
+.cover-subtitle {
+  color: rgb(185, 171, 171);
+  margin-left: 55%;
+  margin-right: 7%;
+}
+.year {
+  border: 1px solid white;
+  padding: 2px;
+}
+.box {
+  display: flex;
+  justify-content: space-around;
+  border: 1px solid rgba(0, 0, 0, 0.616);
+  background-color: rgba(163, 155, 155, 0.534);
+  padding: 2rem;
+  margin-top: -2%;
+  margin-right: 5%;
+  margin-left: 5%;
+}
+.enjoy {
+  color: rgb(15, 15, 15);
+  font-size: 1.5rem;
+  font-weight: bold;
+}
 /******************************Popular Movies Section*******************************/
 
 .head-title {
@@ -302,4 +376,35 @@ Button:focus {
  .right-clear{
     padding-right: 0;
 }
+}
+/******************************Favorites Page*******************************/
+.cover-favorite {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.671), rgba(0, 0, 0, 0.4)),
+  url(https://images.unsplash.com/photo-1585951237318-9ea5e175b891?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8bW92aWV8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60);
+  background-size: cover;
+  height: 40rem;
+}
+.title-favorite {
+  text-align: center;
+  color: white;
+  margin-top: 15%;
+}
+.btn-remove {
+  background-color: red !important;
+  color: white;
+  border: 1px solid white;
+}
+/******************************Series Page*******************************/
+.cover-Serie {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.671), rgba(0, 0, 0, 0.4)),
+  url(https://media.gqmagazine.fr/photos/5facfe288dc5e7e09e9d33b6/master/pass/Netflix%202021.jpg);
+  background-size: cover;
+  height: 40rem;
+}
+/******************************Genres Page*******************************/
+.cover-Genre {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.671), rgba(0, 0, 0, 0.4)),
+  url(https://images.unsplash.com/photo-1613679074451-9ddcc1103cc8?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTE2fHxtb3ZpZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60);
+  background-size: cover;
+  height: 40rem;
 }

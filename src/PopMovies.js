@@ -17,15 +17,15 @@ function PopMovies({search , movie, getFavorites, favoriteMovie, getFavoriteMovi
                  {/* Movie card */}
                 <div className="mt-5">
                      <Card className="movie-card bg-dark text-white">
-                         <Card.Img src={el.posterUrl} alt="Card image" />
+                         <Card.Img src={el.Poster} alt="Card image" />
                          <Card.ImgOverlay className="d-flex align-items-start justify-content-end">
-                             <Card.Title><Button onClick={() => {getFavorites() ; getFavoriteMovie()}}><i class="fas fa-heart fa-2x"></i></Button></Card.Title>                        
+                             <Card.Title><Button onClick={() => {getFavorites() ; getFavoriteMovie(el)}}><i class="fas fa-heart fa-2x"></i></Button></Card.Title>                        
                              <Card.Text></Card.Text>
                          </Card.ImgOverlay>
                          <div className="p-3 body-card">
-                             <h6>{el.title}</h6>
-                             <h6>{el.year}</h6>
-                             <Rater total={5} rating={el.rating} interactive={false} />
+                             <h6>{el.Title}</h6>
+                             <h6>{el.Year}</h6>
+                             <Rater total={5} rating={el.Rating} interactive={false} />
                          </div>
                      </Card>
                 </div>
