@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {state, useState, useEffect} from 'react'
+import {useState, useEffect} from 'react'
 import Favorite from './Favorite';
 import { BrowserRouter, Route } from "react-router-dom";
 
@@ -14,7 +14,7 @@ function App() {
   // UseState movie declaration 
   const [movie, setMovie] = useState([])
     
-  // Fetch movies and add it to my state
+  // Fetch movies and add it to my state ***
   const getMovie = ()=>{
       
       fetch('movie.json').then(
@@ -25,11 +25,12 @@ function App() {
   useEffect(()=> {getMovie()
   },[])
 
-  // UseState search declaration 
+  // UseState search : It stores the input of search
   const [search, setSearch] = useState('');
-  function handleChange(e) {
+  const onSearch = (e) =>{
     setSearch(e.target.value);
-}
+  }
+
 
   // UseState favorite : It is the array that stores the favorites item’s numbers.
   const [favorite, setFavorite] = useState(0);
@@ -73,8 +74,8 @@ function App() {
   return (
     <div>
        <BrowserRouter>       
-        <Route exact path="/"><Home search={search} onSearchChange={handleChange} movie={movie} favorite={favorite} getFavorites={getFavorites} favoriteMovie={favoriteMovie} getFavoriteMovie={getFavoriteMovie}/></Route>
-        <Route path="/series"><Series favorite={favorite}/></Route>
+        <Route exact path="/"><Home search={search} onSearch={onSearch} movie={movie} favorite={favorite} getFavorites={getFavorites} favoriteMovie={favoriteMovie} getFavoriteMovie={getFavoriteMovie}/></Route>
+        <Route path="/series"><Series favorite={favorite} movie={movie} search={search} onSearch={onSearch} getFavoriteMovie={getFavoriteMovie} getFavorites={getFavorites}/></Route>
         <Route path="/genres"> <Genre favorite={favorite}/> </Route>
         <Route path="/favorites"><Favorite favorite={favorite} favoriteMovie={favoriteMovie} removeFavoriteMovie={removeFavoriteMovie} removeAll={removeAll}/></Route>
       </BrowserRouter> 

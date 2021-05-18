@@ -4,13 +4,13 @@ import PopMovies from './PopMovies'
 import Navigation from './Nav'
 import Footer from './Footer'
 
-function Home({search, onSearchChange, movie, favorite, getFavorites, favoriteMovie, getFavoriteMovie}) {
+function Home({search, onSearch, movie, favorite, getFavorites, favoriteMovie, getFavoriteMovie}) {
   
   return (
     <div>
         {/* NavigationBar and Cover Section */}
         <div className="cover">
-          <Navigation search= {search} onSearch={onSearchChange} favorite={favorite}/>
+          <Navigation search= {search} onSearch={onSearch} favorite={favorite}/>
           <h1 className="cover-title">Night Stalker :<br></br>
            The serial killer chase</h1>
            <p className="cover-subtitle">1 | <span className="year">18+</span> | 1 season | Documentaries about real crimes</p>

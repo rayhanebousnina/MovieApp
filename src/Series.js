@@ -6,22 +6,22 @@ import Rater from 'react-rater'
 import 'react-rater/lib/react-rater.css'
 
 
-function Series({favorite, movie, getFavorites, getFavoriteMovie, search}) {
+function Series({favorite, movie, getFavorites, getFavoriteMovie, search,onSearch}) {
   return (
-
+   
     movie.filter((el) => {
       if ((el.Type === "serie" && search === "") || (el.Type === "serie" && el.Title.toLowerCase().includes(search.toLowerCase()))){
-       return el
-     }
+        return el
+      }
      }).map(el => 
     <div>
         <div className="cover-Serie">
           
-          <Navigation favorite={favorite}/>
+          <Navigation favorite={favorite} onSearch={onSearch}/>
         </div> 
         <div>   
           <div className="mt-5">
-                <Card className="movie-card bg-dark text-white">
+                <Card className="movie-card bg-dark text-white" style={{ width: '18rem' }}>
                     <Card.Img src={el.Poster} alt="Card image" />
                     <Card.ImgOverlay className="d-flex align-items-start justify-content-end">
                         <Card.Title><Button onClick={() => {getFavorites() ; getFavoriteMovie(el)}}><i class="fas fa-heart fa-2x"></i></Button></Card.Title>                        

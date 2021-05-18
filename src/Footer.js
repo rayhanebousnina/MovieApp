@@ -10,7 +10,7 @@ function Footer() {
         <div class="row">
         <div class="col-md-4 col-sm-6">
             <div class="footer-single">
-            <img className="logo" src="images/logo.png"></img> 
+            <img className="logo" src="images/logo.png" alt="logo"></img> 
         
 
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus felis diam, vulputate in risus eu, porttitor condimentum purus. Phasellus ullamcorper, odio id feugiat bibendum.</p>
