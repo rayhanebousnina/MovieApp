@@ -10,7 +10,7 @@ function Home({search, onSearch, movie, favorite, getFavorites, favoriteMovie, g
     <div>
         {/* NavigationBar and Cover Section */}
         <div className="cover">
-          <Navigation search= {search} onSearch={onSearch} favorite={favorite}/>
+          <Navigation  movie={movie} search= {search} onSearch={onSearch} favorite={favorite}/>
           <h1 className="cover-title">Night Stalker :<br></br>
            The serial killer chase</h1>
            <p className="cover-subtitle">1 | <span className="year">18+</span> | 1 season | Documentaries about real crimes</p>
@@ -21,7 +21,7 @@ function Home({search, onSearch, movie, favorite, getFavorites, favoriteMovie, g
         <p className="box"><div className="enjoy">Enjoy watching whatever you want</div><button className="btn-signIn">Subscribe Now</button></p>
         {/* Popular Movies Section */}
         <Container className="my-5"><h2 className="head-title pb-2"><span>P</span>opular <span>M</span>ovies</h2><Row className="inline-cards"><PopMovies search= {search} movie={movie} getFavorites={getFavorites} favoriteMovie={favoriteMovie} getFavoriteMovie={getFavoriteMovie}/></Row></Container>
-        <Footer/>
+        
         
     </div>
   );

@@ -4,7 +4,7 @@ import { Card, Button } from "react-bootstrap";
 import Rater from "react-rater";
 import "react-rater/lib/react-rater.css";
 
-function Series({
+function Movies({
   favorite,
   movie,
   getFavorites,
@@ -20,8 +20,8 @@ function Series({
       {movie
         .filter((el) => {
           if (
-            (el.Type === "serie" && search === "") ||
-            (el.Type === "serie" &&
+            (el.Type === "movie" && search === "") ||
+            (el.Type === "movie" &&
               el.Title.toLowerCase().includes(search.toLowerCase()))
           ) {
             return el;
@@ -63,4 +63,4 @@ function Series({
   );
 }
 
-export default Series;
+export default Movies;

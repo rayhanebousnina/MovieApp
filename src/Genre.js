@@ -10,7 +10,6 @@ function Genre({favorite}) {
           <Navigation favorite={favorite}/>
           <h1 className="title-favorite">Genres</h1>
       </div> 
-        <Footer/>
     </div>
   );
 }

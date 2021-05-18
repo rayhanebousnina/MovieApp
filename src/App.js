@@ -2,11 +2,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {useState, useEffect} from 'react'
 import Favorite from './Favorite';
 import { BrowserRouter, Route } from "react-router-dom";
-
+import Footer from "./Footer"
 import './App.css';
 import Home from './Home'
 import Genre from './Genre'
 import Series from './Series'
+import Movies from './Movies';
 
 
 function App() {
@@ -55,15 +56,14 @@ function App() {
 
 
     let index = favoriteMovie.indexOf(el)
-    console.log(index)
     favoriteMovie.splice(index,1)
+    setFavoriteMovie(favoriteMovie)
 
     // let index = favoriteMovie.indexOf(el)
     // delete favoriteMovie[index]
 
-    setFavoriteMovie(favoriteMovie)
+    
     setFavorite(favorite -1)
-    console.log(favoriteMovie)
   }
   const removeAll = () => {
     // setFavoriteMovie(favoriteMovie => [])
@@ -76,8 +76,10 @@ function App() {
        <BrowserRouter>       
         <Route exact path="/"><Home search={search} onSearch={onSearch} movie={movie} favorite={favorite} getFavorites={getFavorites} favoriteMovie={favoriteMovie} getFavoriteMovie={getFavoriteMovie}/></Route>
         <Route path="/series"><Series favorite={favorite} movie={movie} search={search} onSearch={onSearch} getFavoriteMovie={getFavoriteMovie} getFavorites={getFavorites}/></Route>
+        <Route path="/movies"><Movies favorite={favorite} movie={movie} search={search} onSearch={onSearch} getFavoriteMovie={getFavoriteMovie} getFavorites={getFavorites}/></Route>
         <Route path="/genres"> <Genre favorite={favorite}/> </Route>
         <Route path="/favorites"><Favorite favorite={favorite} favoriteMovie={favoriteMovie} removeFavoriteMovie={removeFavoriteMovie} removeAll={removeAll}/></Route>
+        <Footer/>
       </BrowserRouter> 
       
     </div>
