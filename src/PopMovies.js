@@ -1,5 +1,5 @@
 import React from 'react'
-import {Card, Button} from 'react-bootstrap'
+import {Card, Button, Col, Row} from 'react-bootstrap'
 import './App.css';
 import Rater from 'react-rater'
 import 'react-rater/lib/react-rater.css'
@@ -15,10 +15,10 @@ function PopMovies({search , movie, getFavorites, favoriteMovie, getFavoriteMovi
      ).map(el => 
 
         <div>   
-                    
+             <Row>       
             {/* Movie card */}
-           <div className="mt-5">
-                <Card className="movie-card bg-dark text-white">
+           
+                <Card className="movie-card bg-dark text-white my-3" style={{ width: '16rem'}}>
                     <Card.Img src={el.Poster} alt="Card image" />
                     <Card.ImgOverlay className="d-flex align-items-start justify-content-end">                       
                         <Card.Title>
@@ -38,8 +38,8 @@ function PopMovies({search , movie, getFavorites, favoriteMovie, getFavoriteMovi
                         <Rater total={5} rating={el.Rating} interactive={false} />
                     </div>
                 </Card>
-           </div>
-           
+          
+           </Row>
         </div>
         
     )

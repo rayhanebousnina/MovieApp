@@ -1,0 +1,25 @@
+/******************************Dashboard Page*******************************/
+
+.sideBar {
+    background-color: #1f2f55;
+    height: 40rem;
+}
+.navBar {
+background-color: #16274d;
+height: 5rem;
+}
+.fa-trash-alt {
+color: red;
+}
+.fa-edit {
+color: rgb(3, 106, 175);
+}
+.add-movie {
+ background-color: green !important;
+}
+.content {
+background-color: #314467 !important;
+}
+body {
+    overflow-x: hidden;
+}

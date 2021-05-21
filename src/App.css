@@ -193,10 +193,10 @@ span {
   border-bottom: 2px solid #bd2c74;
 
 }
-.inline-cards {
+/* .inline-cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-}
+} */
 .fa-star {
   color: rgb(250, 213, 6);
 }
@@ -409,13 +409,3 @@ Button:focus {
   height: 40rem;
 }
 
-/******************************Dashboard Page*******************************/
-
-.sideBar {
-  background-color: #1f2f55;
-  height: 40rem;
-}
-.navBar {
-  background-color: #16274d;
-  height: 5rem;
-}

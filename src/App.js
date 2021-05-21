@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import Favorite from "./Favorite";
 import { BrowserRouter, Route } from "react-router-dom";
 import Footer from "./Footer";
-import "./App.css";
+
 import Home from "./Home";
 import Genre from "./Genre";
 import Series from "./Series";
@@ -18,7 +18,7 @@ function App() {
   // Fetch movies and add it to my state ***
   const getMovie = () => {
     axios
-      .get("http://localhost:3004/posts")
+      .get("http://localhost:3001/posts")
       .then((response) => setMovie(response.data));
   };
 
@@ -67,7 +67,7 @@ function App() {
   return (
     <div>
       <BrowserRouter>
-        <Route exact path="/">
+        <Route exact path="/CinemaMates">
           <Home
             search={search}
             onSearch={onSearch}
@@ -78,7 +78,7 @@ function App() {
             getFavoriteMovie={getFavoriteMovie}
           />
         </Route>
-        <Route path="/series">
+        <Route path="/CinemaMates/series">
           <Series
             favorite={favorite}
             movie={movie}
@@ -88,7 +88,7 @@ function App() {
             getFavorites={getFavorites}
           />
         </Route>
-        <Route path="/movies">
+        <Route path="/CinemaMates/movies">
           <Movies
             favorite={favorite}
             movie={movie}
@@ -98,11 +98,11 @@ function App() {
             getFavorites={getFavorites}
           />
         </Route>
-        <Route path="/genres">
+        <Route path="/CinemaMates/genres">
           {" "}
           <Genre favorite={favorite} />{" "}
         </Route>
-        <Route path="/favorites">
+        <Route path="/CinemaMates/favorites">
           <Favorite
             favorite={favorite}
             favoriteMovie={favoriteMovie}
@@ -110,7 +110,7 @@ function App() {
             removeAll={removeAll}
           />
         </Route>
-        <Route path="/dashboard">
+        <Route path="/CinemaMates/dashboard">
           <Dashboard movie={movie} setMovie={setMovie}/>
         </Route>
         <Footer />
