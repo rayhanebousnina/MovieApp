@@ -1,12 +1,12 @@
 import React from 'react'
 import NavBarComponent from './NavBarComponent'
-import SideBarComponent from './SideBarComponent'
+import { Link } from "react-router-dom";
 import "./admindashboard.css";
 
 
 const UserProfileAdmin = (props) => {
   return(
-    <div>
+    <div className="dark-edition">
         <div class="wrapper ">
     <div class="sidebar" data-color="purple" data-background-color="black" data-image="../assets/img/sidebar-2.jpg">
      
@@ -18,7 +18,34 @@ const UserProfileAdmin = (props) => {
           Creative Tim
         </a>
       </div>
-      <SideBarComponent/>
+      <div class="sidebar-wrapper">
+        <ul class="nav">
+          <li class="nav-item">
+            <Link class="nav-link" to="/CinemaMates/dashboard">
+              <i class="material-icons">dashboard</i>
+              <p>Dashboard</p>
+            </Link>
+          </li>
+          <li class="nav-item active">
+            <Link class="nav-link" to="/CinemaMates/profile">
+              <i class="material-icons">person</i>
+              <p>User Profile</p>
+            </Link>
+          </li>
+          <li class="nav-item ">
+            <Link class="nav-link" to="/CinemaMates/adminmovies">
+              <i class="material-icons">content_paste</i>
+              <p>Movies List</p>
+            </Link>
+          </li>
+          <li class="nav-item ">
+            <Link class="nav-link" to="/CinemaMates/notifications">
+              <i class="material-icons">notifications</i>
+              <p>Notifications</p>
+            </Link>
+          </li>
+        </ul>
+      </div>
     </div>
     <div class="main-panel">
             <NavBarComponent/>

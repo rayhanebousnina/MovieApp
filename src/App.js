@@ -9,6 +9,11 @@ import Movies from "./Movies";
 import axios from "axios";
 import AdminDash from "./AdminDashboard";
 import UserProfileAdmin from "./UserProfileAdmin"
+import AdminMovie from "./AdminMovie"
+import AdminNotification from "./AdminNotification"
+
+
+
 function App() {
   // UseState movie declaration
   const [movie, setMovie] = useState([]);
@@ -108,18 +113,18 @@ function App() {
             removeAll={removeAll}
           />
         </Route>
-        <Route path="/CinemaMates/dashboard">
+        <Route exact path="/CinemaMates/dashboard">
           <AdminDash movie={movie} setMovie={setMovie}/>
         </Route>
-        <Route path="/CinemaMates/dashboard/profile">
+        <Route path="/CinemaMates/profile">
           <UserProfileAdmin movie={movie} setMovie={setMovie}/>
         </Route>
-        {/* <Route path="/CinemaMates/dashboard/movies">
+        <Route path="/CinemaMates/adminmovies">
           <AdminMovie movie={movie} setMovie={setMovie}/>
         </Route>
-        <Route path="/CinemaMates/dashboard/notifications">
-          <Notification movie={movie} setMovie={setMovie}/>
-        </Route> */}
+        <Route path="/CinemaMates/notifications">
+          <AdminNotification movie={movie} setMovie={setMovie}/>
+        </Route>
       </BrowserRouter>
     </div>
   );
