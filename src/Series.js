@@ -3,6 +3,8 @@ import Navigation from "./Nav";
 import { Card, Button } from "react-bootstrap";
 import Rater from "react-rater";
 import "react-rater/lib/react-rater.css";
+import Footer from "./Footer";
+
 
 function Series({
   favorite,
@@ -59,6 +61,7 @@ function Series({
             </div>
           </div>
         ))}
+        <Footer/>
     </div>
   );
 }

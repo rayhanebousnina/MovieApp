@@ -2,15 +2,13 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { useState, useEffect } from "react";
 import Favorite from "./Favorite";
 import { BrowserRouter, Route } from "react-router-dom";
-import Footer from "./Footer";
-
 import Home from "./Home";
 import Genre from "./Genre";
 import Series from "./Series";
 import Movies from "./Movies";
-import Dashboard from "./Dashboard";
 import axios from "axios";
-
+import AdminDash from "./AdminDashboard";
+import UserProfileAdmin from "./UserProfileAdmin"
 function App() {
   // UseState movie declaration
   const [movie, setMovie] = useState([]);
@@ -111,9 +109,17 @@ function App() {
           />
         </Route>
         <Route path="/CinemaMates/dashboard">
-          <Dashboard movie={movie} setMovie={setMovie}/>
+          <AdminDash movie={movie} setMovie={setMovie}/>
         </Route>
-        <Footer />
+        <Route path="/CinemaMates/dashboard/profile">
+          <UserProfileAdmin movie={movie} setMovie={setMovie}/>
+        </Route>
+        {/* <Route path="/CinemaMates/dashboard/movies">
+          <AdminMovie movie={movie} setMovie={setMovie}/>
+        </Route>
+        <Route path="/CinemaMates/dashboard/notifications">
+          <Notification movie={movie} setMovie={setMovie}/>
+        </Route> */}
       </BrowserRouter>
     </div>
   );

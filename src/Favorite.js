@@ -4,6 +4,9 @@ import { Card, Button, Container, Col, Row } from "react-bootstrap";
 import Rater from "react-rater";
 import "react-rater/lib/react-rater.css";
 import "./App.css";
+import Footer from "./Footer";
+
+
 
 const Favorite = ({
   favorite,
@@ -71,7 +74,7 @@ const Favorite = ({
           Remove All
         </Button>
       </div>
-     
+     <Footer/>
     </div>
   );
 };

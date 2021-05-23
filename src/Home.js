@@ -2,6 +2,7 @@ import './App.css';
 import {Container, Row} from 'react-bootstrap'
 import PopMovies from './PopMovies'
 import Navigation from './Nav'
+import Footer from "./Footer";
 
 function Home({search, onSearch, movie, favorite, getFavorites, favoriteMovie, getFavoriteMovie}) {
   
@@ -30,7 +31,7 @@ function Home({search, onSearch, movie, favorite, getFavorites, favoriteMovie, g
           </Container>
         </div>
         
-        
+        <Footer />
     </div>
   );
 }
