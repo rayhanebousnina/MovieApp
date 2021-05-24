@@ -15,7 +15,7 @@ import Rater from "react-rater";
 import "react-rater/lib/react-rater.css";
 import axios from "axios";
 import { useState } from "react";
-
+import UpdateModal from "./UpdateModal";
 
 
 
@@ -33,7 +33,7 @@ const AdminMovie = ({movie, setMovie}) => {
     function deleteMovie(e, id) {
       axios
         .delete(`http://localhost:3001/posts/${id}`)
-        .then((res) => console.log("hhh tfasaa5"));
+        .then((res) => console.log(res.data));
       // removeMovie()
     }
   
@@ -43,6 +43,8 @@ const AdminMovie = ({movie, setMovie}) => {
   
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+
+
     // Add Movie Function
     const [input, setInput] = useState({
       Title: "",
@@ -78,15 +80,7 @@ const AdminMovie = ({movie, setMovie}) => {
         .then((response) => console.log(response))
         .catch((error) => console.log(error));
     };
-  
-    const editMovie = (e, id) => {
-      e.preventDefault();
-      console.log(input);
-      axios
-        .put(`http://localhost:3001/posts/${id}`, input)
-        .then((response) => setMovie({ updatedAt: response.updatedAt }))
-        .catch((error) => console.log(error));
-    };
+
 
     
 
@@ -385,181 +379,9 @@ const AdminMovie = ({movie, setMovie}) => {
                   <Rater total={5} rating={el.Rating} interactive={false} />
                   <Button onClick={(e) => deleteMovie(e, el.id)}>
                     <i class="fas fa-trash-alt"></i>
-                  </Button>
-                  <Button onClick={handleShow1}>
-                    <i class="fas fa-edit"></i>
-                  </Button>
+                  </Button>                 
 
-                  {/* Edit Movie Modal */}
-                  <Modal show={show1} onHide={handleClose1}>
-                    <Modal.Header closeButton>
-                      <Modal.Title>Modal heading</Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>
-                      {/* Movie Data */}
-                      <Form onClick={editMovie} method="post">
-                        <InputGroup className="mb-3">
-                          <FormControl
-                            placeholder="Title"
-                            aria-label="Title"
-                            name="Title"
-                            defaultValue={el.Title}
-                            aria-describedby="basic-addon1"
-                            onChange={handleChange}
-                          />
-                        </InputGroup>
-                        <InputGroup className="mb-3">
-                          <FormControl
-                            placeholder="Year"
-                            aria-label="Year"
-                            name="Year"
-                            defaultValue={el.Year}
-                            aria-describedby="basic-addon1"
-                            onChange={handleChange}
-                          />
-                        </InputGroup>
-                        <InputGroup className="mb-3">
-                          <FormControl
-                            placeholder="Runtime"
-                            aria-label="Runtime"
-                            name="Runtime"
-                            defaultValue={el.Runtime}
-                            aria-describedby="basic-addon1"
-                            onChange={handleChange}
-                          />
-                        </InputGroup>
-                        <InputGroup className="mb-3">
-                          <FormControl
-                            placeholder="Genre"
-                            aria-label="Genre"
-                            name="Genre"
-                            defaultValue={el.Genre}
-                            aria-describedby="basic-addon1"
-                            onChange={handleChange}
-                          />
-                        </InputGroup>
-                        <InputGroup className="mb-3">
-                          <FormControl
-                            placeholder="Actors"
-                            aria-label="Actors"
-                            name="Actors"
-                            defaultValue={el.Actors}
-                            aria-describedby="basic-addon1"
-                            onChange={handleChange}
-                          />
-                        </InputGroup>
-                        <InputGroup className="mb-3">
-                          <FormControl
-                            placeholder="Plot"
-                            aria-label="Plot"
-                            name="Plot"
-                            defaultValue={el.Plot}
-                            aria-describedby="basic-addon1"
-                            onChange={handleChange}
-                          />
-                        </InputGroup>
-                        <InputGroup className="mb-3">
-                          <FormControl
-                            placeholder="Language"
-                            aria-label="Language"
-                            name="Language"
-                            defaultValue={el.Language}
-                            aria-describedby="basic-addon1"
-                            onChange={handleChange}
-                          />
-                        </InputGroup>
-                        <InputGroup className="mb-3">
-                          <FormControl
-                            placeholder="Country"
-                            aria-label="Country"
-                            name="Country"
-                            defaultValue={el.Country}
-                            aria-describedby="basic-addon1"
-                            onChange={handleChange}
-                          />
-                        </InputGroup>
-                        <InputGroup className="mb-3">
-                          <FormControl
-                            placeholder="Awards"
-                            aria-label="Awards"
-                            name="Awards"
-                            defaultValue={el.Awards}
-                            aria-describedby="basic-addon1"
-                            onChange={handleChange}
-                          />
-                        </InputGroup>
-                        <InputGroup className="mb-3">
-                          <FormControl
-                            placeholder="Poster"
-                            aria-label="Poster"
-                            name="Poster"
-                            defaultValue={el.Poster}
-                            aria-describedby="basic-addon1"
-                            onChange={handleChange}
-                          />
-                        </InputGroup>
-                        <InputGroup className="mb-3">
-                          <FormControl
-                            placeholder="Rating"
-                            aria-label="Rating"
-                            name="Rating"
-                            defaultValue={el.Rating}
-                            aria-describedby="basic-addon1"
-                            onChange={handleChange}
-                          />
-                        </InputGroup>
-                        <InputGroup className="mb-3">
-                          <FormControl
-                            placeholder="imdbRating"
-                            aria-label="imdbRating"
-                            name="imdbRating"
-                            defaultValue={el.imdbRating}
-                            aria-describedby="basic-addon1"
-                            onChange={handleChange}
-                          />
-                        </InputGroup>
-                        <InputGroup className="mb-3">
-                          <FormControl
-                            placeholder="imdbVotes"
-                            aria-label="imdbVotes"
-                            name="imdbVotes"
-                            defaultValue={el.imdbVotes}
-                            aria-describedby="basic-addon1"
-                            onChange={handleChange}
-                          />
-                        </InputGroup>
-                        <InputGroup className="mb-3">
-                          <FormControl
-                            placeholder="Type"
-                            aria-label="Type"
-                            name="Type"
-                            defaultValue={el.Type}
-                            aria-describedby="basic-addon1"
-                            onChange={handleChange}
-                          />
-                        </InputGroup>
-                        <InputGroup className="mb-3">
-                          <FormControl
-                            placeholder="totalSeasons"
-                            aria-label="totalSeasons"
-                            name="totalSeasons"
-                            defaultValue={el.totalSeasons}
-                            aria-describedby="basic-addon1"
-                            onChange={handleChange}
-                          />
-                        </InputGroup>
-                        <Button type="submit">Submit</Button>
-                      </Form>
-                    </Modal.Body>
-                    <Modal.Footer>
-                      <Button variant="secondary" onClick={handleClose1}>
-                        Close
-                      </Button>
-                      <Button variant="primary" onClick={handleClose1}>
-                        Save Changes
-                      </Button>
-                    </Modal.Footer>
-                  </Modal>
+                  <UpdateModal el={el}/>
                 </div>
               </Card>
             ))}

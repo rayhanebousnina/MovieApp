@@ -19,14 +19,14 @@ import {useState} from 'react'
     
     <div>
         <Navbar className="navbar-shadow" bg="dark justify-content-around" variant="dark">
-            <Navbar.Brand href="#home">
+            <Navbar.Brand href="/CinemaMates">
                 <img className="logo" src="images/logo.png"></img>
             </Navbar.Brand>
             <Nav className="mr-auto">
-                <Link to="/">Home</Link>                
-                <Link to="/series">Series</Link>
-                <Link to="/genres">Genre</Link>
-                <Link to="/favorites">Favorites <span className="badge-favorite">{favorite}</span></Link>
+                <Link to="/CinemaMates">Home</Link>                
+                <Link to="/CinemaMates/series">Series</Link>
+                <Link to="/CinemaMates/genres">Genre</Link>
+                <Link to="/CinemaMates/favorites">Favorites <span className="badge-favorite">{favorite}</span></Link>
             </Nav>
             <Form inline>
                 <FormControl type="text" placeholder="Search" className="mr-sm-2" onChange={onSearch}/>

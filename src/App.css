@@ -1,6 +1,6 @@
 
 body {
-  background-color: #0f181d;
+  background-color: #0f181d !important;
 }
 
 
@@ -34,7 +34,7 @@ body {
   width: auto;
 }
 .navbar-nav a {
-  color: #bcbdbf;
+  color: #bcbdbf !important;
   text-decoration: none;
   margin-right: 0.5rem;
 }
@@ -75,16 +75,22 @@ body {
   border-radius: 15px;
   padding: 2px 6px 2px 5px;
 }
+.navbar.bg-dark {
+  color: #fff;
+  background-color: #21212100 !important;
+  box-shadow: 0 4px 20px 0px rgb(0 0 0 / 14%), 0 7px 12px -5px rgb(33 33 33 / 46%);
+}
 .navbar-shadow {
   box-shadow: 0 2px 4px 0 rgba(48, 44, 44, 0.322);
 }
 
 .btn-signIn {
-  background: rgb(166, 63, 251);
-  background: linear-gradient(90deg, rgb(166, 63, 251) 0%, rgba(252,70,107,1) 100%);
-  border: none;
-  color: #fff;
-  border-radius: 2rem;
+  background: rgb(166, 63, 251) !important;
+  background: linear-gradient(90deg, rgb(166, 63, 251) 0%, rgba(252,70,107,1) 100%) !important;
+  border: none !important;
+  color: #fff !important;
+  border-radius: 2rem !important;
+  height: 2.5rem;
 }
 .modal-content {
   position: relative;
@@ -92,7 +98,7 @@ body {
   flex-direction: column;
   width: 100%;
   pointer-events: auto;
-  background-color: rgba(0, 0, 0, 0.733);
+  background-color: rgba(0, 0, 0, 0.733) !important;
   background-clip: padding-box;
   border: 1px solid #bd2c74;
   border-radius: .3rem;
@@ -227,7 +233,7 @@ Button:focus {
 }
 /******************************Footer*******************************/
 .nb-footer{
-  background: #130012b4;
+  background: #110714;
   padding-bottom: 30px;
 }
 .nb-footer .footer-single{
@@ -299,7 +305,8 @@ Button:focus {
 .nb-footer .btn-footer{
   border: 1px solid #bd2c74;
   margin-top: 10px;
-  color: #999;
+  color: #fff;
+  background-color: #bd2c74 !important
 }
 .nb-footer .btn-footer:hover{
   background: #bd2c74;
@@ -335,7 +342,7 @@ Button:focus {
   line-height: 22px;
 }
 .nb-copyright{
-  background: #050005e0;
+  background: #0a040c;
   padding-bottom: 10px;
 }
  .nb-copyright .copyrt{

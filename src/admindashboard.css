@@ -2731,7 +2731,6 @@
   
   .form-inline {
     display: flex;
-    flex-flow: row wrap;
     align-items: center;
   }
   
@@ -6478,7 +6477,7 @@
   }
   
   .bg-dark {
-    background-color: #343a40 !important;
+    background-color: #343a40;
   }
   
   a.bg-dark:hover,
@@ -9419,9 +9418,6 @@
   
   .btn {
     position: relative;
-    padding: 12px 30px;
-    margin: 0.3125rem 1px;
-    font-size: .75rem;
     font-weight: 400;
     line-height: 1.428571;
     text-decoration: none;
@@ -13937,7 +13933,7 @@
   
   .navbar.bg-dark {
     color: #fff;
-    background-color: #212121 !important;
+    background-color: #212121;
     box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 12px -5px rgba(33, 33, 33, 0.46);
   }
   
