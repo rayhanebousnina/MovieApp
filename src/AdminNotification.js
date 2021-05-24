@@ -12,10 +12,7 @@ const AdminNotification = (props) => {
           data-background-color="black"
           data-image="../assets/img/sidebar-2.jpg"
         >
-          {/*       
-        Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
-
-        Tip 2: you can also add an image using data-image tag */}
+        
 
           <div class="logo">
             <a

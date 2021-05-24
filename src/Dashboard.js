@@ -103,183 +103,183 @@
 //             <p>Search Bar</p>
 //             {/* <img className="profile" src="/images/profile.jpg" alt="profile" /> */}
 //           </Row>
-//           <div className="d-flex justify-content-around mt-5">
-//             <p>6245 Movies</p>
-//             <Button onClick={handleShow} className="btn-signIn addMovies" variant="">
-//               Add movie
-//             </Button>
+        //   <div className="d-flex justify-content-around mt-5">
+        //     <p>6245 Movies</p>
+        //     <Button onClick={handleShow} className="btn-signIn addMovies" variant="">
+        //       Add movie
+        //     </Button>
 
-//             {/* Add Movie Modal */}
-//             <Modal show={show} onHide={handleClose}>
-//               <Modal.Header closeButton>
-//                 <Modal.Title>Modal heading</Modal.Title>
-//               </Modal.Header>
-//               <Modal.Body>
-//                 {/* Movie Data */}
-//                 <Form onSubmit={addMovie} method="post">
-//                   <InputGroup className="mb-3">
-//                     <FormControl
-//                       placeholder="Title"
-//                       aria-label="Title"
-//                       name="Title"
-//                       value={input.Title}
-//                       aria-describedby="basic-addon1"
-//                       onChange={handleChange}
-//                     />
-//                   </InputGroup>
-//                   <InputGroup className="mb-3">
-//                     <FormControl
-//                       placeholder="Year"
-//                       aria-label="Year"
-//                       name="Year"
-//                       value={input.Year}
-//                       aria-describedby="basic-addon1"
-//                       onChange={handleChange}
-//                     />
-//                   </InputGroup>
-//                   <InputGroup className="mb-3">
-//                     <FormControl
-//                       placeholder="Runtime"
-//                       aria-label="Runtime"
-//                       name="Runtime"
-//                       value={input.Runtime}
-//                       aria-describedby="basic-addon1"
-//                       onChange={handleChange}
-//                     />
-//                   </InputGroup>
-//                   <InputGroup className="mb-3">
-//                     <FormControl
-//                       placeholder="Genre"
-//                       aria-label="Genre"
-//                       name="Genre"
-//                       value={input.Genre}
-//                       aria-describedby="basic-addon1"
-//                       onChange={handleChange}
-//                     />
-//                   </InputGroup>
-//                   <InputGroup className="mb-3">
-//                     <FormControl
-//                       placeholder="Actors"
-//                       aria-label="Actors"
-//                       name="Actors"
-//                       value={input.Actors}
-//                       aria-describedby="basic-addon1"
-//                       onChange={handleChange}
-//                     />
-//                   </InputGroup>
-//                   <InputGroup className="mb-3">
-//                     <FormControl
-//                       placeholder="Plot"
-//                       aria-label="Plot"
-//                       name="Plot"
-//                       value={input.Plot}
-//                       aria-describedby="basic-addon1"
-//                       onChange={handleChange}
-//                     />
-//                   </InputGroup>
-//                   <InputGroup className="mb-3">
-//                     <FormControl
-//                       placeholder="Language"
-//                       aria-label="Language"
-//                       name="Language"
-//                       value={input.Language}
-//                       aria-describedby="basic-addon1"
-//                       onChange={handleChange}
-//                     />
-//                   </InputGroup>
-//                   <InputGroup className="mb-3">
-//                     <FormControl
-//                       placeholder="Country"
-//                       aria-label="Country"
-//                       name="Country"
-//                       value={input.Country}
-//                       aria-describedby="basic-addon1"
-//                       onChange={handleChange}
-//                     />
-//                   </InputGroup>
-//                   <InputGroup className="mb-3">
-//                     <FormControl
-//                       placeholder="Awards"
-//                       aria-label="Awards"
-//                       name="Awards"
-//                       value={input.Awards}
-//                       aria-describedby="basic-addon1"
-//                       onChange={handleChange}
-//                     />
-//                   </InputGroup>
-//                   <InputGroup className="mb-3">
-//                     <FormControl
-//                       placeholder="Poster"
-//                       aria-label="Poster"
-//                       name="Poster"
-//                       value={input.Poster}
-//                       aria-describedby="basic-addon1"
-//                       onChange={handleChange}
-//                     />
-//                   </InputGroup>
-//                   <InputGroup className="mb-3">
-//                     <FormControl
-//                       placeholder="Rating"
-//                       aria-label="Rating"
-//                       name="Rating"
-//                       value={input.Rating}
-//                       aria-describedby="basic-addon1"
-//                       onChange={handleChange}
-//                     />
-//                   </InputGroup>
-//                   <InputGroup className="mb-3">
-//                     <FormControl
-//                       placeholder="imdbRating"
-//                       aria-label="imdbRating"
-//                       name="imdbRating"
-//                       value={input.imdbRating}
-//                       aria-describedby="basic-addon1"
-//                       onChange={handleChange}
-//                     />
-//                   </InputGroup>
-//                   <InputGroup className="mb-3">
-//                     <FormControl
-//                       placeholder="imdbVotes"
-//                       aria-label="imdbVotes"
-//                       name="imdbVotes"
-//                       value={input.imdbVotes}
-//                       aria-describedby="basic-addon1"
-//                       onChange={handleChange}
-//                     />
-//                   </InputGroup>
-//                   <InputGroup className="mb-3">
-//                     <FormControl
-//                       placeholder="Type"
-//                       aria-label="Type"
-//                       name="Type"
-//                       value={input.Type}
-//                       aria-describedby="basic-addon1"
-//                       onChange={handleChange}
-//                     />
-//                   </InputGroup>
-//                   <InputGroup className="mb-3">
-//                     <FormControl
-//                       placeholder="totalSeasons"
-//                       aria-label="totalSeasons"
-//                       name="totalSeasons"
-//                       value={input.totalSeasons}
-//                       aria-describedby="basic-addon1"
-//                       onChange={handleChange}
-//                     />
-//                   </InputGroup>
-//                   <Button type="submit">Submit</Button>
-//                 </Form>
-//               </Modal.Body>
-//               <Modal.Footer>
-//                 <Button variant="secondary" onClick={handleClose}>
-//                   Close
-//                 </Button>
-//                 <Button variant="primary" onClick={handleClose}>
-//                   Save Changes
-//                 </Button>
-//               </Modal.Footer>
-//             </Modal>
-//           </div>
+        //     {/* Add Movie Modal */}
+        //     <Modal show={show} onHide={handleClose}>
+        //       <Modal.Header closeButton>
+        //         <Modal.Title>Modal heading</Modal.Title>
+        //       </Modal.Header>
+        //       <Modal.Body>
+        //         {/* Movie Data */}
+        //         <Form onSubmit={addMovie} method="post">
+        //           <InputGroup className="mb-3">
+        //             <FormControl
+        //               placeholder="Title"
+        //               aria-label="Title"
+        //               name="Title"
+        //               value={input.Title}
+        //               aria-describedby="basic-addon1"
+        //               onChange={handleChange}
+        //             />
+        //           </InputGroup>
+        //           <InputGroup className="mb-3">
+        //             <FormControl
+        //               placeholder="Year"
+        //               aria-label="Year"
+        //               name="Year"
+        //               value={input.Year}
+        //               aria-describedby="basic-addon1"
+        //               onChange={handleChange}
+        //             />
+        //           </InputGroup>
+        //           <InputGroup className="mb-3">
+        //             <FormControl
+        //               placeholder="Runtime"
+        //               aria-label="Runtime"
+        //               name="Runtime"
+        //               value={input.Runtime}
+        //               aria-describedby="basic-addon1"
+        //               onChange={handleChange}
+        //             />
+        //           </InputGroup>
+        //           <InputGroup className="mb-3">
+        //             <FormControl
+        //               placeholder="Genre"
+        //               aria-label="Genre"
+        //               name="Genre"
+        //               value={input.Genre}
+        //               aria-describedby="basic-addon1"
+        //               onChange={handleChange}
+        //             />
+        //           </InputGroup>
+        //           <InputGroup className="mb-3">
+        //             <FormControl
+        //               placeholder="Actors"
+        //               aria-label="Actors"
+        //               name="Actors"
+        //               value={input.Actors}
+        //               aria-describedby="basic-addon1"
+        //               onChange={handleChange}
+        //             />
+        //           </InputGroup>
+        //           <InputGroup className="mb-3">
+        //             <FormControl
+        //               placeholder="Plot"
+        //               aria-label="Plot"
+        //               name="Plot"
+        //               value={input.Plot}
+        //               aria-describedby="basic-addon1"
+        //               onChange={handleChange}
+        //             />
+        //           </InputGroup>
+        //           <InputGroup className="mb-3">
+        //             <FormControl
+        //               placeholder="Language"
+        //               aria-label="Language"
+        //               name="Language"
+        //               value={input.Language}
+        //               aria-describedby="basic-addon1"
+        //               onChange={handleChange}
+        //             />
+        //           </InputGroup>
+        //           <InputGroup className="mb-3">
+        //             <FormControl
+        //               placeholder="Country"
+        //               aria-label="Country"
+        //               name="Country"
+        //               value={input.Country}
+        //               aria-describedby="basic-addon1"
+        //               onChange={handleChange}
+        //             />
+        //           </InputGroup>
+        //           <InputGroup className="mb-3">
+        //             <FormControl
+        //               placeholder="Awards"
+        //               aria-label="Awards"
+        //               name="Awards"
+        //               value={input.Awards}
+        //               aria-describedby="basic-addon1"
+        //               onChange={handleChange}
+        //             />
+        //           </InputGroup>
+        //           <InputGroup className="mb-3">
+        //             <FormControl
+        //               placeholder="Poster"
+        //               aria-label="Poster"
+        //               name="Poster"
+        //               value={input.Poster}
+        //               aria-describedby="basic-addon1"
+        //               onChange={handleChange}
+        //             />
+        //           </InputGroup>
+        //           <InputGroup className="mb-3">
+        //             <FormControl
+        //               placeholder="Rating"
+        //               aria-label="Rating"
+        //               name="Rating"
+        //               value={input.Rating}
+        //               aria-describedby="basic-addon1"
+        //               onChange={handleChange}
+        //             />
+        //           </InputGroup>
+        //           <InputGroup className="mb-3">
+        //             <FormControl
+        //               placeholder="imdbRating"
+        //               aria-label="imdbRating"
+        //               name="imdbRating"
+        //               value={input.imdbRating}
+        //               aria-describedby="basic-addon1"
+        //               onChange={handleChange}
+        //             />
+        //           </InputGroup>
+        //           <InputGroup className="mb-3">
+        //             <FormControl
+        //               placeholder="imdbVotes"
+        //               aria-label="imdbVotes"
+        //               name="imdbVotes"
+        //               value={input.imdbVotes}
+        //               aria-describedby="basic-addon1"
+        //               onChange={handleChange}
+        //             />
+        //           </InputGroup>
+        //           <InputGroup className="mb-3">
+        //             <FormControl
+        //               placeholder="Type"
+        //               aria-label="Type"
+        //               name="Type"
+        //               value={input.Type}
+        //               aria-describedby="basic-addon1"
+        //               onChange={handleChange}
+        //             />
+        //           </InputGroup>
+        //           <InputGroup className="mb-3">
+        //             <FormControl
+        //               placeholder="totalSeasons"
+        //               aria-label="totalSeasons"
+        //               name="totalSeasons"
+        //               value={input.totalSeasons}
+        //               aria-describedby="basic-addon1"
+        //               onChange={handleChange}
+        //             />
+        //           </InputGroup>
+        //           <Button type="submit">Submit</Button>
+        //         </Form>
+        //       </Modal.Body>
+        //       <Modal.Footer>
+        //         <Button variant="secondary" onClick={handleClose}>
+        //           Close
+        //         </Button>
+        //         <Button variant="primary" onClick={handleClose}>
+        //           Save Changes
+        //         </Button>
+        //       </Modal.Footer>
+        //     </Modal>
+        //   </div>
 
 //           <div className="mt-5 d-flex justify-content-around flex-wrap">
 //             {movie.map((el) => (
