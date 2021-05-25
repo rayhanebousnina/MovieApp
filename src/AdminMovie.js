@@ -379,7 +379,7 @@ const AdminMovie = ({movie, setMovie}) => {
                   <Rater total={5} rating={el.Rating} interactive={false} />
                   <Button onClick={(e) => deleteMovie(e, el.id)}>
                     <i class="fas fa-trash-alt"></i>
-                  </Button>                 
+                  </Button>                  
 
                   <UpdateModal el={el}/>
                 </div>

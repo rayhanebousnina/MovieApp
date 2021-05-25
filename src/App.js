@@ -8,15 +8,16 @@ import Series from "./Series";
 import Movies from "./Movies";
 import axios from "axios";
 import AdminDash from "./AdminDashboard";
-import UserProfileAdmin from "./UserProfileAdmin"
-import AdminMovie from "./AdminMovie"
-import AdminNotification from "./AdminNotification"
+import UserProfileAdmin from "./UserProfileAdmin";
+import AdminMovie from "./AdminMovie";
+import AdminNotification from "./AdminNotification";
 
 
 
 function App() {
   // UseState movie declaration
   const [movie, setMovie] = useState([]);
+  // const h = fireBase().database().ref("https://test-124ae-default-rtdb.firebaseio.com/posts")
 
   // Fetch movies and add it to my state ***
   const getMovie = () => {
@@ -114,16 +115,16 @@ function App() {
           />
         </Route>
         <Route exact path="/CinemaMates/dashboard">
-          <AdminDash movie={movie} setMovie={setMovie}/>
+          <AdminDash movie={movie} setMovie={setMovie} />
         </Route>
         <Route path="/CinemaMates/profile">
-          <UserProfileAdmin movie={movie} setMovie={setMovie}/>
+          <UserProfileAdmin movie={movie} setMovie={setMovie} />
         </Route>
         <Route path="/CinemaMates/adminmovies">
-          <AdminMovie movie={movie} setMovie={setMovie}/>
+          <AdminMovie movie={movie} setMovie={setMovie} />
         </Route>
         <Route path="/CinemaMates/notifications">
-          <AdminNotification movie={movie} setMovie={setMovie}/>
+          <AdminNotification movie={movie} setMovie={setMovie} />
         </Route>
       </BrowserRouter>
     </div>
