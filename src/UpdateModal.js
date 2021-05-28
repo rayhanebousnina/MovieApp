@@ -13,7 +13,7 @@ import {
   import axios from "axios";
   import { useState } from "react";
 
-const UpdateModal = ({el}) => {
+const UpdateModal = ({id, movie}) => {
 
           // Modal State for editing a movie
   const [show1, setShow1] = useState(false);
@@ -24,21 +24,21 @@ const UpdateModal = ({el}) => {
 
     // Update Movie Function
     const [updateInput, setUpdatedInput] = useState({
-        Title: el.Title,
-        Year: el.Year,
-        Runtime: el.Runtime,
-        Genre: el.Genre,
-        Type: el.Type,
-        totalSeasons: el.totalSeasons,
-        Actors: el.Actors,
-        Plot: el.Plot,
-        Rating: el.Rating,
-        Language: el.Language,
-        Coutnry: el.Country,
-        Awards: el.Awards,
-        Poster: el.Poster,
-        imdbRating: el.imdbRating,
-        imdbVotes: el.imdbVotes,
+        Title: movie[id].Title,
+        Year: movie[id].Year,
+        Runtime: movie[id].Runtime,
+        Genre: movie[id].Genre,
+        Type: movie[id].Type,
+        totalSeasons: movie[id].totalSeasons,
+        Actors: movie[id].Actors,
+        Plot: movie[id].Plot,
+        Rating: movie[id].Rating,
+        Language: movie[id].Language,
+        Coutnry: movie[id].Country,
+        Awards: movie[id].Awards,
+        Poster: movie[id].Poster,
+        imdbRating: movie[id].imdbRating,
+        imdbVotes: movie[id].imdbVotes,
       });
     
       const handleChange2 = (e) => {
@@ -51,9 +51,8 @@ const UpdateModal = ({el}) => {
   
       const editMovie = (e, id) => {
         e.preventDefault();
-        console.log(updateInput);
         axios
-          .put(`http://localhost:3001/posts/${id}`, updateInput)
+          .put(`https://test-124ae-default-rtdb.firebaseio.com/posts/${id}.json`, JSON.stringify(updateInput))
           .then((response) => setUpdatedInput(response.data))
           .catch((error) => console.log(error));
       };
@@ -77,7 +76,7 @@ const UpdateModal = ({el}) => {
                             placeholder="Title"
                             aria-label="Title"
                             name="Title"
-                            defaultValue={el.Title}
+                            defaultValue={movie[id].Title}
                             aria-describedby="basic-addon1"
                             onChange={handleChange2}
                           />
@@ -87,7 +86,7 @@ const UpdateModal = ({el}) => {
                             placeholder="Year"
                             aria-label="Year"
                             name="Year"
-                            defaultValue={el.Year}
+                            defaultValue={movie[id].Year}
                             aria-describedby="basic-addon1"
                             onChange={handleChange2}
                           />
@@ -97,7 +96,7 @@ const UpdateModal = ({el}) => {
                             placeholder="Runtime"
                             aria-label="Runtime"
                             name="Runtime"
-                            defaultValue={el.Runtime}
+                            defaultValue={movie[id].Runtime}
                             aria-describedby="basic-addon1"
                             onChange={handleChange2}
                           />
@@ -107,7 +106,7 @@ const UpdateModal = ({el}) => {
                             placeholder="Genre"
                             aria-label="Genre"
                             name="Genre"
-                            defaultValue={el.Genre}
+                            defaultValue={movie[id].Genre}
                             aria-describedby="basic-addon1"
                             onChange={handleChange2}
                           />
@@ -117,7 +116,7 @@ const UpdateModal = ({el}) => {
                             placeholder="Actors"
                             aria-label="Actors"
                             name="Actors"
-                            defaultValue={el.Actors}
+                            defaultValue={movie[id].Actors}
                             aria-describedby="basic-addon1"
                             onChange={handleChange2}
                           />
@@ -127,7 +126,7 @@ const UpdateModal = ({el}) => {
                             placeholder="Plot"
                             aria-label="Plot"
                             name="Plot"
-                            defaultValue={el.Plot}
+                            defaultValue={movie[id].Plot}
                             aria-describedby="basic-addon1"
                             onChange={handleChange2}
                           />
@@ -137,7 +136,7 @@ const UpdateModal = ({el}) => {
                             placeholder="Language"
                             aria-label="Language"
                             name="Language"
-                            defaultValue={el.Language}
+                            defaultValue={movie[id].Language}
                             aria-describedby="basic-addon1"
                             onChange={handleChange2}
                           />
@@ -147,7 +146,7 @@ const UpdateModal = ({el}) => {
                             placeholder="Country"
                             aria-label="Country"
                             name="Country"
-                            defaultValue={el.Country}
+                            defaultValue={movie[id].Country}
                             aria-describedby="basic-addon1"
                             onChange={handleChange2}
                           />
@@ -157,7 +156,7 @@ const UpdateModal = ({el}) => {
                             placeholder="Awards"
                             aria-label="Awards"
                             name="Awards"
-                            defaultValue={el.Awards}
+                            defaultValue={movie[id].Awards}
                             aria-describedby="basic-addon1"
                             onChange={handleChange2}
                           />
@@ -167,7 +166,7 @@ const UpdateModal = ({el}) => {
                             placeholder="Poster"
                             aria-label="Poster"
                             name="Poster"
-                            defaultValue={el.Poster}
+                            defaultValue={movie[id].Poster}
                             aria-describedby="basic-addon1"
                             onChange={handleChange2}
                           />
@@ -177,7 +176,7 @@ const UpdateModal = ({el}) => {
                             placeholder="Rating"
                             aria-label="Rating"
                             name="Rating"
-                            defaultValue={el.Rating}
+                            defaultValue={movie[id].Rating}
                             aria-describedby="basic-addon1"
                             onChange={handleChange2}
                           />
@@ -187,7 +186,7 @@ const UpdateModal = ({el}) => {
                             placeholder="imdbRating"
                             aria-label="imdbRating"
                             name="imdbRating"
-                            defaultValue={el.imdbRating}
+                            defaultValue={movie[id].imdbRating}
                             aria-describedby="basic-addon1"
                             onChange={handleChange2}
                           />
@@ -197,7 +196,7 @@ const UpdateModal = ({el}) => {
                             placeholder="imdbVotes"
                             aria-label="imdbVotes"
                             name="imdbVotes"
-                            defaultValue={el.imdbVotes}
+                            defaultValue={movie[id].imdbVotes}
                             aria-describedby="basic-addon1"
                             onChange={handleChange2}
                           />
@@ -207,7 +206,7 @@ const UpdateModal = ({el}) => {
                             placeholder="Type"
                             aria-label="Type"
                             name="Type"
-                            defaultValue={el.Type}
+                            defaultValue={movie[id].Type}
                             aria-describedby="basic-addon1"
                             onChange={handleChange2}
                           />
@@ -217,12 +216,12 @@ const UpdateModal = ({el}) => {
                             placeholder="totalSeasons"
                             aria-label="totalSeasons"
                             name="totalSeasons"
-                            defaultValue={el.totalSeasons}
+                            defaultValue={movie[id].totalSeasons}
                             aria-describedby="basic-addon1"
                             onChange={handleChange2}
                           />
                         </InputGroup>
-                        <Button type="submit" onClick={(e) => editMovie(e,el.id)}>Update movie</Button>
+                        <Button type="submit" onClick={(e) => editMovie(e,id)}>Update movie</Button>
                       </Form>
                     </Modal.Body>
                     <Modal.Footer>

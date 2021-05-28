@@ -19,7 +19,7 @@ import UpdateModal from "./UpdateModal";
 
 
 
-const AdminMovie = ({movie, setMovie}) => {
+const AdminMovie = ({movie, setMovie, onSearch, search }) => {
 
 
       // Modal State for editing a movie
@@ -30,9 +30,9 @@ const AdminMovie = ({movie, setMovie}) => {
 
 
 
-    function deleteMovie(e, id) {
+    function deleteMovie(id) {
       axios
-        .delete(`http://localhost:3001/posts/${id}`)
+        .delete(`https://test-124ae-default-rtdb.firebaseio.com/posts/${id}.json`)
         .then((res) => console.log(res.data));
       // removeMovie()
     }
@@ -47,6 +47,7 @@ const AdminMovie = ({movie, setMovie}) => {
 
     // Add Movie Function
     const [input, setInput] = useState({
+     
       Title: "",
       Year: "",
       Runtime: "",
@@ -71,12 +72,13 @@ const AdminMovie = ({movie, setMovie}) => {
         input: "",
       });
     };
+
   
     const addMovie = (e) => {
       e.preventDefault();
       console.log(input);
       axios
-        .post("http://localhost:3001/posts", input)
+        .post(`https://test-124ae-default-rtdb.firebaseio.com/posts.json`, JSON.stringify(input))
         .then((response) => console.log(response))
         .catch((error) => console.log(error));
     };
@@ -139,7 +141,7 @@ const AdminMovie = ({movie, setMovie}) => {
           <div class="collapse navbar-collapse justify-content-end">
             <form class="navbar-form">
               <div class="input-group no-border">
-                <input type="text" value="" class="form-control" placeholder="Search..."/>
+                <input type="text" value="" class="form-control" placeholder="Search..."  onChange={onSearch}/>
                 <button type="submit" class="btn btn-default btn-round btn-just-icon">
                   <i class="material-icons">search</i>
                   <div class="ripple-container"></div>
@@ -367,21 +369,25 @@ const AdminMovie = ({movie, setMovie}) => {
           </div>
             {/* End Add Movie Modal */}
          <div className="mt-5 d-flex justify-content-around flex-wrap">
-          {movie.map((el) => (
+           {/*       movie.filter(el => 
+        el.Title.toLowerCase().includes(search.toLowerCase())
+     ).map(el =>  */}
+          {Object.keys(movie).map((id) => (
               <Card
+              key={id}
                 className="movie-card text-white m-2"
                 style={{ width: "16rem" }}
               >
-                <Card.Img src={el.Poster} alt="Card image" />
+                <Card.Img src={movie[id].Poster} alt="Card image" />
                 <div className="p-3 body-card">
-                  <h6>{el.Title}</h6>
-                  <h6>{el.Year}</h6>
-                  <Rater total={5} rating={el.Rating} interactive={false} />
-                  <Button onClick={(e) => deleteMovie(e, el.id)}>
+                  <h6>{movie[id].Title}</h6>
+                  <h6>{movie[id].Year}</h6>
+                  <Rater total={5} rating={movie[id].Rating} interactive={false} />
+                  <Button onClick={() => deleteMovie(id)}>
                     <i class="fas fa-trash-alt"></i>
                   </Button>                  
 
-                  <UpdateModal el={el}/>
+                  <UpdateModal id={id} movie={movie}/>
                 </div>
               </Card>
             ))}

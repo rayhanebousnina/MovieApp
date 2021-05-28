@@ -22,8 +22,8 @@ function App() {
   // Fetch movies and add it to my state ***
   const getMovie = () => {
     axios
-      .get("http://localhost:3001/posts")
-      .then((response) => setMovie(response.data));
+      .get("https://test-124ae-default-rtdb.firebaseio.com/posts.json")
+      .then((response) => {setMovie(response.data)});
   };
 
   useEffect(() => {
@@ -121,7 +121,7 @@ function App() {
           <UserProfileAdmin movie={movie} setMovie={setMovie} />
         </Route>
         <Route path="/CinemaMates/adminmovies">
-          <AdminMovie movie={movie} setMovie={setMovie} />
+          <AdminMovie movie={movie} setMovie={setMovie} search={search} onSearch={onSearch}/>
         </Route>
         <Route path="/CinemaMates/notifications">
           <AdminNotification movie={movie} setMovie={setMovie} />
