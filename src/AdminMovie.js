@@ -21,6 +21,10 @@ import UpdateModal from "./UpdateModal";
 
 const AdminMovie = ({movie, setMovie, onSearch, search }) => {
 
+    // Reload pages
+    const reload = () => {
+      window.location.reload();
+    }
 
       // Modal State for editing a movie
   const [show1, setShow1] = useState(false);
@@ -33,7 +37,8 @@ const AdminMovie = ({movie, setMovie, onSearch, search }) => {
     function deleteMovie(id) {
       axios
         .delete(`https://test-124ae-default-rtdb.firebaseio.com/posts/${id}.json`)
-        .then((res) => console.log(res.data));
+        .then((res) => console.log(res.data))
+        .then(res=>reload())
       // removeMovie()
     }
   
@@ -80,6 +85,7 @@ const AdminMovie = ({movie, setMovie, onSearch, search }) => {
       axios
         .post(`https://test-124ae-default-rtdb.firebaseio.com/posts.json`, JSON.stringify(input))
         .then((response) => console.log(response))
+        .then(res=>reload)
         .catch((error) => console.log(error));
     };
 
@@ -191,7 +197,7 @@ const AdminMovie = ({movie, setMovie, onSearch, search }) => {
         {/* add Movie here */}
         
         <div className="d-flex justify-content-around mt-5">
-            <p>6245 Movies</p>
+            <p className="countMovies"> {Object.values(movie).length} Movies</p>
             <Button onClick={handleShow} className="btn-signIn addMovies" variant="">
               Add movie
             </Button>
@@ -383,11 +389,13 @@ const AdminMovie = ({movie, setMovie, onSearch, search }) => {
                   <h6>{movie[id].Title}</h6>
                   <h6>{movie[id].Year}</h6>
                   <Rater total={5} rating={movie[id].Rating} interactive={false} />
-                  <Button onClick={() => deleteMovie(id)}>
-                    <i class="fas fa-trash-alt"></i>
-                  </Button>                  
+                  <div className="d-flex justify-content-around">
+                    <Button onClick={() => deleteMovie(id)}>
+                      <i class="fas fa-trash-alt"></i>
+                    </Button>                  
 
-                  <UpdateModal id={id} movie={movie}/>
+                    <UpdateModal id={id} movie={movie}/>
+                  </div>
                 </div>
               </Card>
             ))}

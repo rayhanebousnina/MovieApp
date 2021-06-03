@@ -1,9 +1,6 @@
 import React from 'react'
 
 import {
-    Row,
-    Col,
-    Card,
     Button,
     Modal,
     InputGroup,
@@ -14,6 +11,11 @@ import {
   import { useState } from "react";
 
 const UpdateModal = ({id, movie}) => {
+
+  // Reload pages
+const reload = () => {
+  window.location.reload();
+}
 
           // Modal State for editing a movie
   const [show1, setShow1] = useState(false);
@@ -53,6 +55,7 @@ const UpdateModal = ({id, movie}) => {
         axios
           .put(`https://test-124ae-default-rtdb.firebaseio.com/posts/${id}.json`, updateInput)
           .then((response) => setUpdatedInput(response.data))
+          .then(res=>reload())
           .catch((error) => console.log(error));
       };
   

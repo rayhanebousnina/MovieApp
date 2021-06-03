@@ -404,7 +404,7 @@ Button:focus {
 /******************************Series Page*******************************/
 .cover-Serie {
   background-image: linear-gradient(rgba(0, 0, 0, 0.671), rgba(0, 0, 0, 0.4)),
-  url(https://images.unsplash.com/photo-1465834450628-96ab39b2f557?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTB8fGZpbG18ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60);
+  url(https://cinemusefilms.files.wordpress.com/2016/06/87-me-before-you.jpg);
   background-size: cover;
   height: 40rem;
 }
@@ -421,6 +421,16 @@ Button:focus {
 .countMovies {
   font-weight: bold;
   color: rgb(212, 209, 209);
-  border-left: solid 1px #bd2c74;
+  border-right: solid 1px #bd2c74;
   padding-right: 1rem;
+}
+.content {
+  background-color: #1a1f33;
+}
+.series-sub {
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: rgba(0, 0, 0, 0.466);
+  padding: 1rem;
+  margin-top: 20%;
 }

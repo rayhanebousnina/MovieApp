@@ -25,7 +25,7 @@ import {useState} from 'react'
             <Nav className="">
                 <Link to="/CinemaMates">Home</Link>                
                 <Link to="/CinemaMates/series">Series</Link>
-                <Link to="/CinemaMates/genres">Genre</Link>
+                {/* <Link to="/CinemaMates/genres">Genre</Link> */}
                 <Link to="/CinemaMates/favorites">Favorites <span className="badge-favorite">{favorite}</span></Link>
             </Nav>
             <Form inline>
