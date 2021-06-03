@@ -23,7 +23,7 @@ function App() {
   const getMovie = () => {
     axios
       .get("https://test-124ae-default-rtdb.firebaseio.com/posts.json")
-      .then((response) => {setMovie(response.data)});
+      .then((response) => {setMovie(Object.values(response.data))});
   };
 
   useEffect(() => {
@@ -76,6 +76,7 @@ function App() {
             search={search}
             onSearch={onSearch}
             movie={movie}
+            setMovie={setMovie}
             favorite={favorite}
             getFavorites={getFavorites}
             favoriteMovie={favoriteMovie}

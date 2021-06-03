@@ -49,10 +49,9 @@ const UpdateModal = ({id, movie}) => {
         });
       };
   
-      const editMovie = (e, id) => {
-        e.preventDefault();
+      const editMovie = (id) => {
         axios
-          .put(`https://test-124ae-default-rtdb.firebaseio.com/posts/${id}.json`, JSON.stringify(updateInput))
+          .put(`https://test-124ae-default-rtdb.firebaseio.com/posts/${id}.json`, updateInput)
           .then((response) => setUpdatedInput(response.data))
           .catch((error) => console.log(error));
       };
@@ -70,7 +69,7 @@ const UpdateModal = ({id, movie}) => {
                     </Modal.Header>
                     <Modal.Body>
                       {/* Movie Data */}
-                      <Form onClick={editMovie} method="post">
+                      <Form>
                         <InputGroup className="mb-3">
                           <FormControl
                             placeholder="Title"
@@ -221,7 +220,7 @@ const UpdateModal = ({id, movie}) => {
                             onChange={handleChange2}
                           />
                         </InputGroup>
-                        <Button type="submit" onClick={(e) => editMovie(e,id)}>Update movie</Button>
+                        <Button onClick={() => editMovie(id)}>Update movie</Button>
                       </Form>
                     </Modal.Body>
                     <Modal.Footer>

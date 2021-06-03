@@ -22,7 +22,7 @@ import {useState} from 'react'
             <Navbar.Brand href="/CinemaMates">
                 <img className="logo" src="images/logo.png"></img>
             </Navbar.Brand>
-            <Nav className="mr-auto">
+            <Nav className="">
                 <Link to="/CinemaMates">Home</Link>                
                 <Link to="/CinemaMates/series">Series</Link>
                 <Link to="/CinemaMates/genres">Genre</Link>
@@ -30,8 +30,6 @@ import {useState} from 'react'
             </Nav>
             <Form inline>
                 <FormControl type="text" placeholder="Search" className="mr-sm-2" onChange={onSearch}/>
-                {/* <Button className="btn-search" variant="outline-info">Search</Button> */}
-                {/* <img className="img-fluid profile" src="images/profile.jpg"></img> */}
                 {/* SignIn Button */}
                 <Button className="btn-signIn" variant="primary" onClick={handleShow}>
                     Sign In

@@ -404,7 +404,7 @@ Button:focus {
 /******************************Series Page*******************************/
 .cover-Serie {
   background-image: linear-gradient(rgba(0, 0, 0, 0.671), rgba(0, 0, 0, 0.4)),
-  url(https://media.gqmagazine.fr/photos/5facfe288dc5e7e09e9d33b6/master/pass/Netflix%202021.jpg);
+  url(https://images.unsplash.com/photo-1465834450628-96ab39b2f557?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTB8fGZpbG18ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60);
   background-size: cover;
   height: 40rem;
 }
@@ -416,3 +416,11 @@ Button:focus {
   height: 40rem;
 }
 
+/* ************************************************************** */
+
+.countMovies {
+  font-weight: bold;
+  color: rgb(212, 209, 209);
+  border-left: solid 1px #bd2c74;
+  padding-right: 1rem;
+}

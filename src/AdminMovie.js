@@ -14,7 +14,7 @@ import {
 import Rater from "react-rater";
 import "react-rater/lib/react-rater.css";
 import axios from "axios";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import UpdateModal from "./UpdateModal";
 
 
@@ -75,7 +75,7 @@ const AdminMovie = ({movie, setMovie, onSearch, search }) => {
 
   
     const addMovie = (e) => {
-      e.preventDefault();
+      e.preventDefault()
       console.log(input);
       axios
         .post(`https://test-124ae-default-rtdb.firebaseio.com/posts.json`, JSON.stringify(input))
@@ -83,7 +83,7 @@ const AdminMovie = ({movie, setMovie, onSearch, search }) => {
         .catch((error) => console.log(error));
     };
 
-
+ 
     
 
 
@@ -130,7 +130,7 @@ const AdminMovie = ({movie, setMovie, onSearch, search }) => {
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top " id="navigation-example">
         <div class="container-fluid">
           <div class="navbar-wrapper">
-            <a class="navbar-brand" href="javascript:void(0)">Table List</a>
+            <a class="navbar-brand" href="javascript:void(0)">Movies List</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation" data-target="#navigation-example">
             <span class="sr-only">Toggle navigation</span>
@@ -203,7 +203,7 @@ const AdminMovie = ({movie, setMovie, onSearch, search }) => {
               </Modal.Header>
               <Modal.Body>
                 {/* Movie Data */}
-                <Form onSubmit={addMovie} method="post">
+                <Form onSubmit={addMovie}>
                   <InputGroup className="mb-3">
                     <FormControl
                       placeholder="Title"
@@ -354,7 +354,7 @@ const AdminMovie = ({movie, setMovie, onSearch, search }) => {
                       onChange={handleChange}
                     />
                   </InputGroup>
-                  <Button type="submit">Submit</Button>
+                  <Button type="submit">Add movie</Button>
                 </Form>
               </Modal.Body>
               <Modal.Footer>
