@@ -19,8 +19,9 @@ import {useState} from 'react'
     
     <div>
         <Navbar className="navbar-shadow" bg="dark justify-content-around" variant="dark">
-            <Navbar.Brand href="/CinemaMates">
-                <img className="logo" src="images/logo.png"></img>
+            <Navbar.Brand href="/CinemaMates" className="brand">
+                CINE<span>MA</span>TES
+                {/* <img className="logo" src="images/logo.png"></img> */}
             </Navbar.Brand>
             <Nav className="">
                 <Link to="/CinemaMates">Home</Link>                

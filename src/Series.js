@@ -4,6 +4,7 @@ import { Card, Button, Row, Container } from "react-bootstrap";
 import Rater from "react-rater";
 import "react-rater/lib/react-rater.css";
 import Footer from "./Footer";
+import AdminMovie from "./AdminMovie";
 
 function Series({
   favorite,
@@ -26,12 +27,12 @@ function Series({
       </div>
 
       <Container className="mt-5 d-flex justify-content-around flex-wrap">
-        {movie
+        {Object.keys(movie)
           .filter((el) => {
             if (
-              (el.Type === "serie" && search === "") ||
-              (el.Type === "serie" &&
-                el.Title.toLowerCase().includes(search.toLowerCase()))
+              (movie[el].Type === "serie" && search === "") ||
+              (movie[el].Type === "serie" &&
+                movie[el].Title.toLowerCase().includes(search.toLowerCase()))
             ) {
               return el;
             }
@@ -42,7 +43,7 @@ function Series({
                 className="movie-card bg-dark text-white"
                 style={{ width: "16rem" }}
               >
-                <Card.Img src={el.Poster} alt="Card image" />
+                <Card.Img src={movie[el].Poster} alt="Card image" />
                 <Card.ImgOverlay className="d-flex align-items-start justify-content-end">
                   <Card.Title>
                     <Button
@@ -57,9 +58,9 @@ function Series({
                   <Card.Text></Card.Text>
                 </Card.ImgOverlay>
                 <div className="p-3 body-card">
-                  <h6>{el.Title}</h6>
-                  <h6>{el.Year}</h6>
-                  <Rater total={5} rating={el.Rating} interactive={false} />
+                  <h6>{movie[el].Title}</h6>
+                  <h6>{movie[el].Year}</h6>
+                  <Rater total={5} rating={movie[el].Rating} interactive={false} />
                 </div>
               </Card>
             </Row>

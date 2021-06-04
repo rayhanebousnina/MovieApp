@@ -10,7 +10,7 @@ import {
   import axios from "axios";
   import { useState } from "react";
 
-const UpdateModal = ({id, movie}) => {
+const UpdateModal = ({cle, movie}) => {
 
   // Reload pages
 const reload = () => {
@@ -26,21 +26,21 @@ const reload = () => {
 
     // Update Movie Function
     const [updateInput, setUpdatedInput] = useState({
-        Title: movie[id].Title,
-        Year: movie[id].Year,
-        Runtime: movie[id].Runtime,
-        Genre: movie[id].Genre,
-        Type: movie[id].Type,
-        totalSeasons: movie[id].totalSeasons,
-        Actors: movie[id].Actors,
-        Plot: movie[id].Plot,
-        Rating: movie[id].Rating,
-        Language: movie[id].Language,
-        Coutnry: movie[id].Country,
-        Awards: movie[id].Awards,
-        Poster: movie[id].Poster,
-        imdbRating: movie[id].imdbRating,
-        imdbVotes: movie[id].imdbVotes,
+        Title: movie[cle].Title,
+        Year: movie[cle].Year,
+        Runtime: movie[cle].Runtime,
+        Genre: movie[cle].Genre,
+        Type: movie[cle].Type,
+        totalSeasons: movie[cle].totalSeasons,
+        Actors: movie[cle].Actors,
+        Plot: movie[cle].Plot,
+        Rating: movie[cle].Rating,
+        Language: movie[cle].Language,
+        Coutnry: movie[cle].Country,
+        Awards: movie[cle].Awards,
+        Poster: movie[cle].Poster,
+        imdbRating: movie[cle].imdbRating,
+        imdbVotes: movie[cle].imdbVotes,
       });
     
       const handleChange2 = (e) => {
@@ -78,7 +78,7 @@ const reload = () => {
                             placeholder="Title"
                             aria-label="Title"
                             name="Title"
-                            defaultValue={movie[id].Title}
+                            defaultValue={movie[cle].Title}
                             aria-describedby="basic-addon1"
                             onChange={handleChange2}
                           />
@@ -88,7 +88,7 @@ const reload = () => {
                             placeholder="Year"
                             aria-label="Year"
                             name="Year"
-                            defaultValue={movie[id].Year}
+                            defaultValue={movie[cle].Year}
                             aria-describedby="basic-addon1"
                             onChange={handleChange2}
                           />
@@ -98,7 +98,7 @@ const reload = () => {
                             placeholder="Runtime"
                             aria-label="Runtime"
                             name="Runtime"
-                            defaultValue={movie[id].Runtime}
+                            defaultValue={movie[cle].Runtime}
                             aria-describedby="basic-addon1"
                             onChange={handleChange2}
                           />
@@ -108,7 +108,7 @@ const reload = () => {
                             placeholder="Genre"
                             aria-label="Genre"
                             name="Genre"
-                            defaultValue={movie[id].Genre}
+                            defaultValue={movie[cle].Genre}
                             aria-describedby="basic-addon1"
                             onChange={handleChange2}
                           />
@@ -118,7 +118,7 @@ const reload = () => {
                             placeholder="Actors"
                             aria-label="Actors"
                             name="Actors"
-                            defaultValue={movie[id].Actors}
+                            defaultValue={movie[cle].Actors}
                             aria-describedby="basic-addon1"
                             onChange={handleChange2}
                           />
@@ -128,7 +128,7 @@ const reload = () => {
                             placeholder="Plot"
                             aria-label="Plot"
                             name="Plot"
-                            defaultValue={movie[id].Plot}
+                            defaultValue={movie[cle].Plot}
                             aria-describedby="basic-addon1"
                             onChange={handleChange2}
                           />
@@ -138,7 +138,7 @@ const reload = () => {
                             placeholder="Language"
                             aria-label="Language"
                             name="Language"
-                            defaultValue={movie[id].Language}
+                            defaultValue={movie[cle].Language}
                             aria-describedby="basic-addon1"
                             onChange={handleChange2}
                           />
@@ -148,7 +148,7 @@ const reload = () => {
                             placeholder="Country"
                             aria-label="Country"
                             name="Country"
-                            defaultValue={movie[id].Country}
+                            defaultValue={movie[cle].Country}
                             aria-describedby="basic-addon1"
                             onChange={handleChange2}
                           />
@@ -158,7 +158,7 @@ const reload = () => {
                             placeholder="Awards"
                             aria-label="Awards"
                             name="Awards"
-                            defaultValue={movie[id].Awards}
+                            defaultValue={movie[cle].Awards}
                             aria-describedby="basic-addon1"
                             onChange={handleChange2}
                           />
@@ -168,7 +168,7 @@ const reload = () => {
                             placeholder="Poster"
                             aria-label="Poster"
                             name="Poster"
-                            defaultValue={movie[id].Poster}
+                            defaultValue={movie[cle].Poster}
                             aria-describedby="basic-addon1"
                             onChange={handleChange2}
                           />
@@ -178,7 +178,7 @@ const reload = () => {
                             placeholder="Rating"
                             aria-label="Rating"
                             name="Rating"
-                            defaultValue={movie[id].Rating}
+                            defaultValue={movie[cle].Rating}
                             aria-describedby="basic-addon1"
                             onChange={handleChange2}
                           />
@@ -188,7 +188,7 @@ const reload = () => {
                             placeholder="imdbRating"
                             aria-label="imdbRating"
                             name="imdbRating"
-                            defaultValue={movie[id].imdbRating}
+                            defaultValue={movie[cle].imdbRating}
                             aria-describedby="basic-addon1"
                             onChange={handleChange2}
                           />
@@ -198,7 +198,7 @@ const reload = () => {
                             placeholder="imdbVotes"
                             aria-label="imdbVotes"
                             name="imdbVotes"
-                            defaultValue={movie[id].imdbVotes}
+                            defaultValue={movie[cle].imdbVotes}
                             aria-describedby="basic-addon1"
                             onChange={handleChange2}
                           />
@@ -208,7 +208,7 @@ const reload = () => {
                             placeholder="Type"
                             aria-label="Type"
                             name="Type"
-                            defaultValue={movie[id].Type}
+                            defaultValue={movie[cle].Type}
                             aria-describedby="basic-addon1"
                             onChange={handleChange2}
                           />
@@ -218,13 +218,13 @@ const reload = () => {
                             placeholder="totalSeasons"
                             aria-label="totalSeasons"
                             name="totalSeasons"
-                            defaultValue={movie[id].totalSeasons}
+                            defaultValue={movie[cle].totalSeasons}
                             aria-describedby="basic-addon1"
                             onChange={handleChange2}
                           />
                         </InputGroup>
-                        <Button onClick={() => editMovie(id)}>Update movie</Button>
                       </Form>
+                      <Button onClick={() => editMovie(cle)}>Update movie</Button>
                     </Modal.Body>
                     <Modal.Footer>
                       <Button variant="secondary" onClick={handleClose1}>

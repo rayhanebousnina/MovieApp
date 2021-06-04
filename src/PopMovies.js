@@ -10,8 +10,8 @@ function PopMovies({search , movie, getFavorites, favoriteMovie, getFavoriteMovi
   return (
    
       // Mapping data in cards
-      movie.filter(el => 
-        el.Title.toLowerCase().includes(search.toLowerCase())
+      Object.keys(movie).filter(el => 
+        movie[el].Title.toLowerCase().includes(search.toLowerCase())
      ).map(el => 
 
         <div>   
@@ -19,7 +19,7 @@ function PopMovies({search , movie, getFavorites, favoriteMovie, getFavoriteMovi
             {/* Movie card */}
            
                 <Card className="movie-card bg-dark text-white my-3" style={{ width: '16rem'}}>
-                    <Card.Img src={el.Poster} alt="Card image" />
+                    <Card.Img src={movie[el].Poster} alt="Card image" />
                     <Card.ImgOverlay className="d-flex align-items-start justify-content-end">                       
                         <Card.Title>
                       <Button
@@ -33,12 +33,11 @@ function PopMovies({search , movie, getFavorites, favoriteMovie, getFavoriteMovi
                     </Card.Title>
                     </Card.ImgOverlay>
                     <div className="p-3 body-card">
-                        <h6>{el.Title}</h6>
-                        <h6>{el.Year}</h6>
-                        <Rater total={5} rating={el.Rating} interactive={false} />
+                        <h6>{ movie[el].Title}</h6>
+                        <h6>{ movie[el].Year}</h6>
+                        <Rater total={5} rating={ movie[el].Rating} interactive={false} />
                     </div>
-                </Card>
-          
+                </Card>          
            </Row>
         </div>
         

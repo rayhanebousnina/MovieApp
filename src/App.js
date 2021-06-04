@@ -23,7 +23,7 @@ function App() {
   const getMovie = () => {
     axios
       .get("https://test-124ae-default-rtdb.firebaseio.com/posts.json")
-      .then((response) => {setMovie(Object.values(response.data))});
+      .then((response) => {setMovie(response.data)});
   };
 
   useEffect(() => {

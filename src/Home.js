@@ -19,7 +19,7 @@ function Home({search, onSearch, movie, favorite, getFavorites, favoriteMovie, g
         </div>
         <p className="box"><div className="enjoy">Enjoy watching whatever you want</div><button className="btn-signIn">Subscribe Now</button></p>
         {/* Popular Movies Section */}
-        <div className="my-5">
+        <div className="my-5 mx-3">
           <h2 className="head-title pb-2">
             <span>P</span>opular <span>M</span>ovies
           </h2>
