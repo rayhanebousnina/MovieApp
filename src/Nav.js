@@ -27,7 +27,8 @@ import {useState} from 'react'
                 <Link to="/CinemaMates">Home</Link>                
                 <Link to="/CinemaMates/series">Series</Link>
                 {/* <Link to="/CinemaMates/genres">Genre</Link> */}
-                <Link to="/CinemaMates/favorites">Favorites <span className="badge-favorite">{favorite}</span></Link>
+                <Link to="/CinemaMates/favorites">Favorites</Link>
+                {/* <Link to="/CinemaMates/favorites">Favorites <span className="badge-favorite">{favorite}</span></Link> */}
             </Nav>
             <Form inline>
                 <FormControl type="text" placeholder="Search" className="mr-sm-2" onChange={onSearch}/>

@@ -240,9 +240,9 @@ const AdminMovie = ({ movie, setMovie, onSearch, search }) => {
               </Button>
 
               {/* Add Movie Modal */}
-              <Modal show={show} onHide={handleClose}>
+              <Modal  show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
-                  <Modal.Title>Modal heading</Modal.Title>
+                  <Modal.Title> Adding New Movie</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                   {/* Movie Data */}

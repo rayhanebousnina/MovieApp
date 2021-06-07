@@ -11,6 +11,7 @@ import AdminDash from "./AdminDashboard";
 import UserProfileAdmin from "./UserProfileAdmin";
 import AdminMovie from "./AdminMovie";
 import AdminNotification from "./AdminNotification";
+import Contact from "./Contact"
 
 
 
@@ -114,6 +115,9 @@ function App() {
             removeFavoriteMovie={removeFavoriteMovie}
             removeAll={removeAll}
           />
+        </Route>
+        <Route path="/CinemaMates/contact">
+          <Contact/>
         </Route>
         <Route exact path="/CinemaMates/dashboard">
           <AdminDash movie={movie} setMovie={setMovie} />

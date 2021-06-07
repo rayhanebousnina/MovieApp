@@ -25,7 +25,7 @@ function PopMovies({search , movie, getFavorites, favoriteMovie, getFavoriteMovi
                       <Button
                         onClick={() => {
                           getFavorites();
-                          getFavoriteMovie(el);
+                          getFavoriteMovie(movie[el]);
                         }}
                       >
                         <i class="fas fa-heart fa-2x"></i>

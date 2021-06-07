@@ -1,4 +1,6 @@
 import './App.css';
+import { Link } from "react-router-dom";
+
 
 function Footer() {
   return (
@@ -10,11 +12,12 @@ function Footer() {
         <div class="row">
         <div class="col-md-4 col-sm-6">
             <div class="footer-single">
-            <img className="logo" src="images/logo.png" alt="logo"></img> 
-        
+                CINE<span>MA</span>TES
+                {/* <img className="logo" src="images/logo.png"></img> */}
+            
 
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus felis diam, vulputate in risus eu, porttitor condimentum purus. Phasellus ullamcorper, odio id feugiat bibendum.</p>
-                <a href="" class="btn btn-footer">Contact Us</a>
+                <Link to="/CinemaMates/contact" class="btn btn-footer">Contact Us</Link>
             </div>
         </div>
 

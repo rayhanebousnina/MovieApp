@@ -21,7 +21,7 @@ const Favorite = ({
         <h1 className="title-favorite">Favorite movies</h1>
       </div>
 
-      {Object.keys(favoriteMovie).map((el) => (
+      {Object.values(favoriteMovie).map((el) => (
         <div className="mt-5">
     
 
@@ -30,13 +30,13 @@ const Favorite = ({
           <Container>
             <Row>
               <Col md={4} xs={12}>
-                <Card.Img src={favoriteMovie[el].Poster} alt="Card image" />
+                <Card.Img src={el.Poster} alt="Card image" />
               </Col>
               <Col md={6} xs={12}>
                 <div className="p-3 body-card">
-                  <h3>{favoriteMovie[el].Title}</h3>
-                  <h6>{favoriteMovie[el].Year}</h6>
-                  <Rater total={5} rating={favoriteMovie[el].Rating} interactive={false} />
+                  <h3>{el.Title}</h3>
+                  <h6>{el.Year}</h6>
+                  <Rater total={5} rating={el.Rating} interactive={false} />
                 </div>
               </Col>
               <Col md={2} xs={12}>
